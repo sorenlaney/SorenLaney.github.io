@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/post-with-code/Blog_1.html",
+    "href": "posts/post-with-code/Blog_1.html",
+    "title": "The challenges of Predictive Analytics in organic content marketing",
+    "section": "",
+    "text": "This post will explore the options to tracking these analytics that businesses depend on day to day. \nWhere are these analytics difficult to track?\nIt becomes increasingly difficult to track these metrics when businesses utilize organic content marketing to reach their audiences. Organic content marketing is where a business generates content around their brand that they post on social media. This content is then viewed naturally/organically by the users of that social media platform. The bonuses to this type of marketing is that your only direct cost is the production of the content, compared to paids ads where you have to produce the content and then pay ad rates to promote it. The issue with organic marketing in this manner is that there are not alot of analytics you can get from a social media platform. These analytics are also not tied to a dollar amount making it difficult to track a businesses ROI.\nThe next hurdle is the fact that if you are running paid ads on a social media platform your ads/posts will usally have a direct link going to your sales page or shop page. these links can have individual tracking links and most social platforms will also track link clicks and clicks by campaign to compare the effectives of different ad camgpains. When posting content organcially, you don’t have a direct link on your post. Someone finds your sales page by first seeing your post, then navigating to your profile page and then clicking the link in there bio. That is a lot of steps to get someone to your sales page and with that you don’t get any analytics to show for it. This is another huge challenge that organic content marketers face in tracking the sales they drive from their organic marketing.\nSo why would a business decide to do organic marketing? It is because these strategies prove to be higly effective, espicially for small business that don’t have large ad budgets. It is also one of the fastest ways that you can build a brand and connect with your customers while being exposed to new customers simotameously.\nTo conclude, their is a huge need for a better way to track the ROI of organic content marketing and to recieve further insights on customer behaviors and how content is preforiming."
+  },
+  {
+    "objectID": "posts/post-with-code/Blog_2.html",
+    "href": "posts/post-with-code/Blog_2.html",
+    "title": "Windows Functions 101: What you need to know",
+    "section": "",
+    "text": "Windows functions are great for visualizing data and extracting insights that cannot be gathered through grouby and multi groupby fuinctions. To further understand this we will use the following dataset to compare the differnece and function of groupby and windows functions. This is an example dataset that shows how many hours that employees clocked during a week (it was a slow week). The example code will also be given in pyspark.\n\n\n\nemployee\nbranch\nHrs\n\n\n\n\nJake Ballard\n1\n10\n\n\nOlivia Pope\n1\n19\n\n\nFitz Gerald\n1\n8\n\n\nCyrus Bean\n1\n9\n\n\nMelly Grant\n2\n16\n\n\nHarrison Right\n2\n15\n\n\nElizabeth North\n2\n9\n\n\nQuin Perkins\n3\n15\n\n\nAby Wheelend\n3\n12\n\n\nMarkus Walker\n3\n6\n\n\n\n#### Groupby roupby functions opperate by summarizing data according to a specified group. I this example we will grouby the hours worked in each brand and then sumarize that data by taking the average of each group. This is often much faster than a windows due to the simplicity and is avaliability in most programing languages. A groupby would yield the following result from running the following code.\ndf.groupBy(\"branch\").avg(\"Hrs\").show(truncate=False)\n\n\n\nbranch\nAvg Hrs\n\n\n\n\n1\n11.5\n\n\n2\n13.3\n\n\n3\n11\n\n\n\n\n\nWhen preforming a windows function you can attain aggragate functions without loosing the the rows. This can be very useful when trying to create a new dataframe. An example of how this dataframe could provide more value than a groupby is if you wanted to display a double bar chart comparing the average hours worked in a branch to that of the hours worked by an individual employee. This function has two main parts, a partition and a relational grouped dataset. The first term is what it will partition the dataset into to create the new term/column. The second term can be one of couple of functions that can transform the data. You can then create a new column aggregating the function with that “window” that was created as demonstrated below. A windows functions yields the following result\nWindow.partitionBy(\"branch\").orderBy(\"hrs\")\ndf.withColumn(\"Avg Hrs\",avg.over(windowSpec))\ndf.withColumn(\"row_number\",row_number.over(windowSpec))\n\n\n\nemployee\nbranch\nHrs\nAvg Hrs\n\n\n\n\nQuin Perkins\n3\n15\n11\n\n\nAby Wheelend\n3\n12\n11\n\n\nMarkus Walker\n3\n6\n11\n\n\nOlivia Pope\n1\n19\n11.5\n\n\nJake Ballard\n1\n10\n11.5\n\n\nFitz Gerald\n1\n8\n11.5\n\n\nCyrus Bean\n1\n9\n11.5\n\n\nMelly Grant\n2\n16\n13.3\n\n\nHarrison Right\n2\n15\n13.3\n\n\nElizabeth North\n2\n9\n13.3"
+  },
+  {
+    "objectID": "posts/post-with-code/Blog_2.html#history",
+    "href": "posts/post-with-code/Blog_2.html#history",
+    "title": "Windows Functions 101: What you need to know",
+    "section": "History",
+    "text": "History\nThe windows function originates as a SQL function, however has made it way into many other programming languages over the last couple of years. This function was introduced in 2003. Added functionalty was introduced later on."
+  },
+  {
+    "objectID": "posts/post-with-code/Blog_2.html#example-code",
+    "href": "posts/post-with-code/Blog_2.html#example-code",
+    "title": "Windows Functions 101: What you need to know",
+    "section": "Example Code",
+    "text": "Example Code\n\nSQL\nSELECT  \n        RANK() OVER (PARTITION BY Value_1 ORDER BY Value_2 DESC) \n            AS Value_1_ranking,\n        Column_1,\n        Column_2, \n        Column_3, \n        Column_4\nFROM df;\n\n\nPyspark\nWindow.partitionBy(\"value_1\").orderBy(\"value_2\")"
+  },
+  {
+    "objectID": "posts/post-with-code/Blog_2.html#other-articles-on-windows-function",
+    "href": "posts/post-with-code/Blog_2.html#other-articles-on-windows-function",
+    "title": "Windows Functions 101: What you need to know",
+    "section": "Other Articles on Windows Function",
+    "text": "Other Articles on Windows Function\n\nBlog Articles\n\nBYUI Big Data Windows\nApache Drill Article\nSQL Windows Functions\nWikipedia on SQL\nGeeks for Geeks SQL Windows Function\n\nhttps://www.geeksforgeeks.org/window-functions-in-sql/\n\n\nDocuementations\n\nPyspark Docuementation\nSQL DOcuementation(Mode)\nR Docuementation"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "myblog",
+    "section": "",
+    "text": "Daily Blog\n\n\n\n\n\n\n\n\n\n\n\nNov 4, 2022\n\n\nSoren Laney\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nDaily Blog\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2022\n\n\nSoren Laney\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 19, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  }
+]
