@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "posts/welcome/Blog_1.html",
-    "href": "posts/welcome/Blog_1.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
     "objectID": "posts/post-with-code/index.html",
     "href": "posts/post-with-code/index.html",
     "title": "Post With Code",
@@ -14,39 +7,11 @@
     "text": "This is a post with executable code."
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
     "objectID": "posts/post-with-code/Blog_1.html",
     "href": "posts/post-with-code/Blog_1.html",
     "title": "The challenges of Predictive Analytics in organic content marketing",
     "section": "",
     "text": "This post will explore the options to tracking these analytics that businesses depend on day to day. \nWhere are these analytics difficult to track?\nIt becomes increasingly difficult to track these metrics when businesses utilize organic content marketing to reach their audiences. Organic content marketing is where a business generates content around their brand that they post on social media. This content is then viewed naturally/organically by the users of that social media platform. The bonuses to this type of marketing is that your only direct cost is the production of the content, compared to paids ads where you have to produce the content and then pay ad rates to promote it. The issue with organic marketing in this manner is that there are not alot of analytics you can get from a social media platform. These analytics are also not tied to a dollar amount making it difficult to track a businesses ROI.\nThe next hurdle is the fact that if you are running paid ads on a social media platform your ads/posts will usally have a direct link going to your sales page or shop page. these links can have individual tracking links and most social platforms will also track link clicks and clicks by campaign to compare the effectives of different ad camgpains. When posting content organcially, you don’t have a direct link on your post. Someone finds your sales page by first seeing your post, then navigating to your profile page and then clicking the link in there bio. That is a lot of steps to get someone to your sales page and with that you don’t get any analytics to show for it. This is another huge challenge that organic content marketers face in tracking the sales they drive from their organic marketing.\nSo why would a business decide to do organic marketing? It is because these strategies prove to be higly effective, espicially for small business that don’t have large ad budgets. It is also one of the fastest ways that you can build a brand and connect with your customers while being exposed to new customers simotameously.\nTo conclude, their is a huge need for a better way to track the ROI of organic content marketing and to recieve further insights on customer behaviors and how content is preforiming."
-  },
-  {
-    "objectID": "posts/post-with-code/Blog_2.html#other-articles-on-windows-function",
-    "href": "posts/post-with-code/Blog_2.html#other-articles-on-windows-function",
-    "title": "Windows Functions 101: What you need to know",
-    "section": "Other Articles on Windows Function",
-    "text": "Other Articles on Windows Function\n\nBlog Articles\n\nBYUI Big Data Windows\nApache Drill Article\nSQL Windows Functions\nWikipedia on SQL\nGeeks for Geeks SQL Windows Function\n\nhttps://www.geeksforgeeks.org/window-functions-in-sql/\n\n\nDocuementations\n\nPyspark Docuementation\nSQL DOcuementation(Mode)\nR Docuementation"
-  },
-  {
-    "objectID": "posts/post-with-code/Blog_2.html#example-code",
-    "href": "posts/post-with-code/Blog_2.html#example-code",
-    "title": "Windows Functions 101: What you need to know",
-    "section": "Example Code",
-    "text": "Example Code\n\nSQL\nSELECT  \n        RANK() OVER (PARTITION BY Value_1 ORDER BY Value_2 DESC) \n            AS Value_1_ranking,\n        Column_1,\n        Column_2, \n        Column_3, \n        Column_4\nFROM df;\n\n\nPyspark\nWindow.partitionBy(\"value_1\").orderBy(\"value_2\")"
   },
   {
     "objectID": "posts/post-with-code/Blog_2.html",
@@ -61,5 +26,40 @@
     "title": "Windows Functions 101: What you need to know",
     "section": "History",
     "text": "History\nThe windows function originates as a SQL function, however has made it way into many other programming languages over the last couple of years. This function was introduced in 2003. Added functionalty was introduced later on."
+  },
+  {
+    "objectID": "posts/post-with-code/Blog_2.html#example-code",
+    "href": "posts/post-with-code/Blog_2.html#example-code",
+    "title": "Windows Functions 101: What you need to know",
+    "section": "Example Code",
+    "text": "Example Code\n\nSQL\nSELECT  \n        RANK() OVER (PARTITION BY Value_1 ORDER BY Value_2 DESC) \n            AS Value_1_ranking,\n        Column_1,\n        Column_2, \n        Column_3, \n        Column_4\nFROM df;\n\n\nPyspark\nWindow.partitionBy(\"value_1\").orderBy(\"value_2\")"
+  },
+  {
+    "objectID": "posts/post-with-code/Blog_2.html#other-articles-on-windows-function",
+    "href": "posts/post-with-code/Blog_2.html#other-articles-on-windows-function",
+    "title": "Windows Functions 101: What you need to know",
+    "section": "Other Articles on Windows Function",
+    "text": "Other Articles on Windows Function\n\nBlog Articles\n\nBYUI Big Data Windows\nApache Drill Article\nSQL Windows Functions\nWikipedia on SQL\nGeeks for Geeks SQL Windows Function\n\nhttps://www.geeksforgeeks.org/window-functions-in-sql/\n\n\nDocuementations\n\nPyspark Docuementation\nSQL DOcuementation(Mode)\nR Docuementation"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "myblog",
+    "section": "",
+    "text": "Daily Blog\n\n\n\n\n\n\n\n\n\n\n\nNov 4, 2022\n\n\nSoren Laney\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nDaily Blog\n\n\n\n\n\n\n\n\n\n\n\nSep 28, 2022\n\n\nSoren Laney\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nSep 19, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
   }
 ]
