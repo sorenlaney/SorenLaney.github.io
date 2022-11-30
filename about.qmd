@@ -1,19 +1,19 @@
 ---
-title: "About"
+title: "Soren Laney"
 image: profile.jpg
 about:
   template: jolla
   links:
     - icon: twitter
       text: Twitter
-      href: https://twitter.com
+      href: https://twitter.com/Soren_Laney_
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/soren-laney-35724b117/
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/sorenlaney
 
 ---
 
-About this blog
+I am a Data Scientist and entrepreneur that specializes in online internet marketing. In my spare time I run Ultra races and invest in realestate. 
