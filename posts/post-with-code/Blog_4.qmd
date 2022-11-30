@@ -1,0 +1,37 @@
+---
+title: "Machine Learning in Marketing"
+author: "Soren Laney"
+date: "2022-11-29"
+categories: [Daily Blog]
+---
+
+With the rise of the internet 2.0 facilitated by companies such as facebook and instagram. Companies were able to grow massive followings on social media and drive tons of traffic to their websites. With traffic comes data, and with data comes the question of what to do with it and how to extrat meaningful business insights from it. With the rise of machine learning, much of this data that us to be considered not very useful can be used in machine learning models to create more accurate predictions about lead flow, forecasting and user aquisition just to name a few. 
+
+
+### Expected Areas of growth under ML in Marketing
+
+
+### Recomedation Systems 
+
+### Forecasting and Time Series Predictions 
+
+### Cusomter LTV
+
+### Customer Churn Rate
+
+
+
+
+
+
+***
+
+### References 
+
+[Marketing with ML](https://www.owox.com/blog/articles/machine-learning-in-marketing/)
+
+[Forbes on marketing with Machine Learning](https://www.forbes.com/sites/louiscolumbus/2018/02/25/10-ways-machine-learning-is-revolutionizing-marketing/?sh=d93870d5bb64)
+
+[13 Examples of Machine Learning for Marketing](https://www.akkio.com/post/7-examples-of-machine-learning-for-marketing)
+
+[10 Use Cases for Machine Learning in Marketing](https://www.itransition.com/machine-learning/marketing)

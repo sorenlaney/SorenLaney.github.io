@@ -1,5 +1,3 @@
-
-
 ---
 title: "The challenges of Predictive Analytics in organic content marketing"
 author: "Soren Laney"
