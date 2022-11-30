@@ -6,6 +6,7 @@ categories: [Daily Blog]
 ---
 
 
+![ml_pipeline](ml_pipeline.png)
 
 
 

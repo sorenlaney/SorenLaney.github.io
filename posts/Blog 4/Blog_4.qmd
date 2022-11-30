@@ -8,6 +8,8 @@ categories: [Daily Blog]
 With the rise of the internet 2.0 facilitated by companies such as facebook and instagram. Companies were able to grow massive followings on social media and drive tons of traffic to their websites. With traffic comes data, and with data comes the question of what to do with it and how to extrat meaningful business insights from it. With the rise of machine learning, much of this data that us to be considered not very useful can be used in machine learning models to create more accurate predictions about lead flow, forecasting and user aquisition just to name a few. 
 
 
+![](ml_marketing.png)
+
 ### Expected Areas of growth under ML in Marketing
 
 
@@ -35,3 +37,5 @@ With the rise of the internet 2.0 facilitated by companies such as facebook and 
 [13 Examples of Machine Learning for Marketing](https://www.akkio.com/post/7-examples-of-machine-learning-for-marketing)
 
 [10 Use Cases for Machine Learning in Marketing](https://www.itransition.com/machine-learning/marketing)
+
+[How ML & AI will affect Marketing in 2020](https://peakmarketingservice.com/how-machine-learning-and-ai-will-affect-marketing-in-2020/)
