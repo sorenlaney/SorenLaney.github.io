@@ -5,11 +5,13 @@ date: "2022-11-04"
 categories: [Daily Blog]
 ---
 
-## Windows Overview
+Windows functions are great for visualizing data and extracting insights that cannot be gathered through grouby and multi groupby fuinctions.
 
 ![](Windows.png)
 
-Windows functions are great for visualizing data and extracting insights that cannot be gathered through grouby and multi groupby fuinctions. To further understand this we will use the following dataset to compare the differnece and function of groupby and windows functions. This is an example dataset that shows how many hours that employees clocked during a week (it was a slow week). The example code will also be given in pyspark. 
+## Windows Overview
+
+To further understand this we will use the following dataset to compare the differnece and function of groupby and windows functions. This is an example dataset that shows how many hours that employees clocked during a week (it was a slow week). The example code will also be given in pyspark. 
 
  
    |    employee     | branch     | Hrs    |
