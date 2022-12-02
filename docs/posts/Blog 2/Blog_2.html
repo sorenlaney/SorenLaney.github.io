@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Soren Laney">
+<meta name="dcterms.date" content="2022-11-04">
+
+<title>Soren Laney’s Blog - Windows Functions 101: What you need to know</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Soren Laney’s Blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">Soren Laney</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/sorenlaney"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/Soren_Laney_"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Windows Functions 101: What you need to know</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Daily Blog</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Soren Laney </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 4, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>Windows functions are great for visualizing data and extracting insights that cannot be gathered through grouby and multi groupby fuinctions.</p>
+<p><img src="Windows.png" class="img-fluid"></p>
+<section id="windows-overview" class="level2">
+<h2 class="anchored" data-anchor-id="windows-overview">Windows Overview</h2>
+<p>To further understand this we will use the following dataset to compare the differnece and function of groupby and windows functions. This is an example dataset that shows how many hours that employees clocked during a week (it was a slow week). The example code will also be given in pyspark.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>employee</th>
+<th>branch</th>
+<th>Hrs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jake Ballard</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Olivia Pope</td>
+<td>1</td>
+<td>19</td>
+</tr>
+<tr class="odd">
+<td>Fitz Gerald</td>
+<td>1</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>Cyrus Bean</td>
+<td>1</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>Melly Grant</td>
+<td>2</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>Harrison Right</td>
+<td>2</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>Elizabeth North</td>
+<td>2</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>Quin Perkins</td>
+<td>3</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>Aby Wheelend</td>
+<td>3</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>Markus Walker</td>
+<td>3</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>#### Groupby roupby functions opperate by summarizing data according to a specified group. I this example we will grouby the hours worked in each brand and then sumarize that data by taking the average of each group. This is often much faster than a windows due to the simplicity and is avaliability in most programing languages. A groupby would yield the following result from running the following code.</p>
+<pre><code>df.groupBy("branch").avg("Hrs").show(truncate=False)</code></pre>
+<table class="table">
+<thead>
+<tr class="header">
+<th>branch</th>
+<th>Avg Hrs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>11.5</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>13.3</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<section id="windows" class="level4">
+<h4 class="anchored" data-anchor-id="windows">Windows</h4>
+<p>When preforming a windows function you can attain aggragate functions without loosing the the rows. This can be very useful when trying to create a new dataframe. An example of how this dataframe could provide more value than a groupby is if you wanted to display a double bar chart comparing the average hours worked in a branch to that of the hours worked by an individual employee. This function has two main parts, a partition and a relational grouped dataset. The first term is what it will partition the dataset into to create the new term/column. The second term can be one of couple of functions that can transform the data. You can then create a new column aggregating the function with that “window” that was created as demonstrated below. A windows functions yields the following result</p>
+<pre><code>Window.partitionBy("branch").orderBy("hrs")
+df.withColumn("Avg Hrs",avg.over(windowSpec))
+df.withColumn("row_number",row_number.over(windowSpec))</code></pre>
+<table class="table">
+<thead>
+<tr class="header">
+<th>employee</th>
+<th>branch</th>
+<th>Hrs</th>
+<th>Avg Hrs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Quin Perkins</td>
+<td>3</td>
+<td>15</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td>Aby Wheelend</td>
+<td>3</td>
+<td>12</td>
+<td>11</td>
+</tr>
+<tr class="odd">
+<td>Markus Walker</td>
+<td>3</td>
+<td>6</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td>Olivia Pope</td>
+<td>1</td>
+<td>19</td>
+<td>11.5</td>
+</tr>
+<tr class="odd">
+<td>Jake Ballard</td>
+<td>1</td>
+<td>10</td>
+<td>11.5</td>
+</tr>
+<tr class="even">
+<td>Fitz Gerald</td>
+<td>1</td>
+<td>8</td>
+<td>11.5</td>
+</tr>
+<tr class="odd">
+<td>Cyrus Bean</td>
+<td>1</td>
+<td>9</td>
+<td>11.5</td>
+</tr>
+<tr class="even">
+<td>Melly Grant</td>
+<td>2</td>
+<td>16</td>
+<td>13.3</td>
+</tr>
+<tr class="odd">
+<td>Harrison Right</td>
+<td>2</td>
+<td>15</td>
+<td>13.3</td>
+</tr>
+<tr class="even">
+<td>Elizabeth North</td>
+<td>2</td>
+<td>9</td>
+<td>13.3</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="history" class="level2">
+<h2 class="anchored" data-anchor-id="history">History</h2>
+<p>The windows function originates as a SQL function, however has made it way into many other programming languages over the last couple of years. This function was introduced in 2003. Added functionalty was introduced later on.</p>
+</section>
+<section id="example-code" class="level2">
+<h2 class="anchored" data-anchor-id="example-code">Example Code</h2>
+<section id="sql" class="level4">
+<h4 class="anchored" data-anchor-id="sql">SQL</h4>
+<pre><code>SELECT  
+        RANK() OVER (PARTITION BY Value_1 ORDER BY Value_2 DESC) 
+            AS Value_1_ranking,
+        Column_1,
+        Column_2, 
+        Column_3, 
+        Column_4
+FROM df;</code></pre>
+</section>
+<section id="pyspark" class="level4">
+<h4 class="anchored" data-anchor-id="pyspark">Pyspark</h4>
+<pre><code>Window.partitionBy("value_1").orderBy("value_2")</code></pre>
+<hr>
+</section>
+</section>
+<section id="other-articles-on-windows-function" class="level2">
+<h2 class="anchored" data-anchor-id="other-articles-on-windows-function">Other Articles on Windows Function</h2>
+<section id="blog-articles" class="level4">
+<h4 class="anchored" data-anchor-id="blog-articles">Blog Articles</h4>
+<ul>
+<li><a href="'https://github.com/byuibigdata/spark_guide/blob/main/aggregate_calculations.md'">BYUI Big Data Windows</a></li>
+<li><a href="'https://drill.apache.org/docs/sql-window-functions-introduction/#:~:text=Window%20functions%20operate%20on%20a,to%20calculate%20the%20returned%20values.'">Apache Drill Article</a></li>
+<li><a href="'https://towardsdatascience.com/a-guide-to-advanced-sql-window-functions-f63f2642cbf9'">SQL Windows Functions</a></li>
+<li><a href="'https://en.wikipedia.org/wiki/Window_function_(SQL)'">Wikipedia on SQL</a></li>
+<li><a href="'https://www.geeksforgeeks.org/window-functions-in-sql/'">Geeks for Geeks SQL Windows Function</a></li>
+</ul>
+<p>https://www.geeksforgeeks.org/window-functions-in-sql/</p>
+</section>
+<section id="docuementations" class="level4">
+<h4 class="anchored" data-anchor-id="docuementations">Docuementations</h4>
+<ul>
+<li><a href="'https://sparkbyexamples.com/spark/spark-sql-window-functions/'">Pyspark Docuementation</a></li>
+<li><a href="'https://mode.com/sql-tutorial/sql-window-functions/'">SQL DOcuementation(Mode)</a></li>
+<li><a href="'https://cran.r-project.org/web/packages/dplyr/vignettes/window-functions.html'">R Docuementation</a></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
